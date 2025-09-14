@@ -11,7 +11,7 @@ export function protectRoute() {
     path.includes("pledgesManage") ||
     path.includes("campaignDetails") ||
     path.includes("mycampaign") ||
-    path.includes("addcampaign") ||
+    path.includes("addCampaign") ||
     path.includes("pledges")
   ) {
     if (!token) {
@@ -36,7 +36,7 @@ export function protectRoute() {
     path.includes("campaignDetails") ||
     path.includes("mycampaign") ||
     path.includes("checkout") ||
-    path.includes("addcampaign") ||
+    path.includes("addCampaign") ||
     path.includes("pledges")
   ) {
     if (role !== "user") {
