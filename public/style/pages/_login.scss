@@ -1,0 +1,141 @@
+@use "../abstracts/variables" as *;
+@use "../components/btns" as *;
+
+.container {
+  margin: 50px auto;
+  width: 100%;
+  max-width: 70%;
+  padding: 0 1em;
+}
+
+.login {
+  background-color: $light-color;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px $overlay-color;
+  font-family: $main-font, sans-serif;
+margin-top: 3em;
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: $secondary-color;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    label {
+      font-weight: 500;
+      color: $text-color;
+    }
+
+    input {
+      padding: 10px 12px;
+      border: 1px solid $light-gray;
+      border-radius: 4px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 5px rgba($primary-color, 0.3);
+      }
+
+      &.is-valid {
+        border-color: $text-success;
+        box-shadow: 0 0 5px rgba($text-success, 0.3);
+      }
+
+      &.is-invalid {
+        border-color: $text-error;
+        box-shadow: 0 0 5px rgba($text-error, 0.3);
+      }
+    }
+
+    .validation-msg {
+      font-size: 14px;
+      margin-top: 2px;
+      min-height: 18px;
+
+      &.error {
+        color: $text-error;
+        font-weight: bold;
+      }
+      &.success {
+        color: $text-success;
+        font-weight: bold;
+      }
+    }
+  }
+
+  #login-msg {
+    display: block;
+    font-size: 16px;
+    margin-top: 20px;
+    min-height: 20px;
+    text-align: center;
+    color: $text-error;
+    font-weight: bold;
+
+    &.success {
+      color: $text-success;
+    }
+  }
+
+  .btn {
+    background-color: $primary-color;
+    color: $light-color;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+
+  &__text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .redirect {
+    color: $primary-color;
+    display: block;
+  }
+}
+
+@media (max-width: 800px) {
+  .login {
+    padding: 20px;
+
+    h1 {
+      font-size: 20px;
+    }
+
+    input,
+    .btn {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+
+  .container {
+    max-width: 100%;
+  }
+}

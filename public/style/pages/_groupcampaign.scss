@@ -1,0 +1,153 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../components/btns" as *;
+
+.container {
+  margin: 50px auto;
+  width: 100%;
+  padding: 0 1em;
+}
+
+.header {
+  @include flex-center(column);
+  padding: 20px;
+  color: $light-color;
+
+  h1 {
+    color: $primary-color;
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  .filters {
+    margin-top: 15px;
+    @include flex-center(row, center, center);
+    flex-wrap: wrap;
+
+    input,
+    select {
+      max-width: 100%;
+      padding: 8px 12px;
+      margin: 5px;
+      border-radius: 6px;
+      border: 1px solid $gray-color;
+      font-size: 14px;
+      outline: none;
+
+      &:focus {
+        border-color: $secondary-color;
+      }
+    }
+  }
+}
+
+.campaigns-container {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 2rem; 
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  .campaign-card {
+    flex: 1 1 280px; 
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 1px solid $light-gray;
+    overflow: hidden;
+
+    .deadline {
+      font-weight: 600;
+      font-size: 14px;
+      color: $te-color;
+      margin-bottom: 8px;
+    }
+    img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+
+      @media (max-width: 480px) {
+        height: 150px;
+      }
+    }
+
+    .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 15px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      color: $primary-color;
+      font-size: 1.2rem;
+
+      @media (max-width: 480px) {
+        font-size: 1rem;
+      }
+    }
+
+    p {font-weight: 700;
+      font-size: 16px;
+      color: $text-color;
+      margin-bottom: 10px;
+      min-height: 38px;
+
+      @media (max-width: 480px) {
+        font-size: 13px;
+        min-height: auto;
+      }
+    }
+
+    .meta {
+      font-weight: 600;
+      font-size: 15px;
+    
+      color: $te-color;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .status {
+      font-weight: bold;
+      font-size: 14px;
+
+      &.approved {
+        color: $text-success;
+      }
+
+      &.not-approved {
+        color: $text-error;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .campaigns-container {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .campaigns-container {
+    gap: 1rem;
+    padding: 10px;
+  }
+
+  .campaigns-container .campaign-card {
+    flex: 1 1 100%; 
+    max-width: 100%;
+  }
+}

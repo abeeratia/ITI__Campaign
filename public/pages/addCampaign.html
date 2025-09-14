@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campaigns</title>
+    <!-- font awesome -->
+   
+    <link
+      rel="stylesheet"
+      href="./../fontawesome-free-7.0.0-web/css/all.min.css"
+    />
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="../style/main.css" />
+  </head>
+  <body>
+    <div id="nav"></div>
+    <div class="container">
+      <section class="campaign-section">
+        <form id="campaignForm" class="campaign-form">
+          <h2>Add Campaign</h2>
+
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Campaign Title"
+            />
+            <div class="error-msg" id="title-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Set description"
+            ></textarea>
+            <div class="error-msg" id="description-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="goal">Goal ($)</label>
+            <input type="number" id="goal" name="goal" placeholder="5000" />
+            <div class="error-msg" id="goal-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="deadline">Deadline</label>
+            <input type="date" id="deadline" name="deadline" />
+            <div class="error-msg" id="deadline-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="image">Upload Image</label>
+            <input type="file" id="image" name="image" accept="image/*" />
+            <div class="error-msg" id="image-error"></div>
+          </div>
+
+          <button type="submit" class="btn btn--full">Add Campaign</button>
+
+          <div class="form-message" id="form-message"></div>
+        </form>
+      </section>
+    </div>
+    <div id="footer"></div>
+
+    <script type="module" src="../js/footer.js"></script>
+    <script type="module" src="../js/campaign.js"></script>
+  </body>
+</html>

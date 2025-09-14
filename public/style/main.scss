@@ -1,0 +1,33 @@
+// abstracts
+@use "./abstracts/variables" as *;
+@use "./abstracts/mixins" as *;
+
+
+// base
+@use "./base/topygraphy" as *;
+
+// layout
+@use "./layout/nav" as *;
+@use "./layout/slider" as *;
+@use "./layout/about" as *;
+@use "./layout/campaignhome" as *;
+@use "./layout/testimonial" as *;
+@use "./layout/footer" as *;
+
+// components
+@use "./components/btns" as *;
+
+// pages
+@use "./pages/regester";
+@use "./pages/login";
+@use "./pages/campaign";
+@use "./pages/groupcampaign";
+@use "./pages/campaigndetails";
+@use "./pages/checkout";
+@use "./pages/mycampaign";
+@use "./pages/pledges";
+@use "./pages/admin.scss";
+@use "./pages/usermange";
+@use "./pages/campaignMange";
+@use "./pages/pledgesManeg";
+

@@ -1,0 +1,59 @@
+@use "../abstracts/variables" as *;
+@use "../components/btns" as *;
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+color: $primary-color !important ;
+}
+
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+
+  .testimonial {
+    width: 280px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+    flex-direction: column;
+    align-items: center;
+
+    .testimonial {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+}

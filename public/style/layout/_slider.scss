@@ -1,0 +1,152 @@
+@use "../abstracts/variables" as *;
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+
+  .slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0; 
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    &.active {
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+
+  .slider-content {
+    margin-bottom: 5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .start-btn {
+      
+        margin-top: 5em;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #f5b400;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #d99a00;
+      }
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+ hidebtn{
+  display: none !important;
+ } }
+
+  .prev {
+    left: 15px;
+  }
+
+  .next {
+    right: 15px;
+  }
+}
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  &.show {
+    display: flex;
+  }
+
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    position: relative;
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      color: $dark-color;
+    }
+
+    .login-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 15px;
+      background-color: $primary-color;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
+}

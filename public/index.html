@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campaign</title>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="./fontawesome-free-7.0.0-web/css/all.min.css"
+    />
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--link of css  -->
+    <link rel="stylesheet" href="./style/main.css" />
+  </head>
+  <body>
+    <!--navbar -->
+    <div id="nav"></div>
+    <!-- slider -->
+  <div class="slider">
+    <div class="slides">
+      <div class="slide active">
+        <img src="../image/bg4_.jpg" alt="Slide 1" />
+      </div>
+      <div class="slide">
+        <img src="../image/bg3.jpg" alt="Slide 2" />
+      </div>
+    </div>
+
+    <div class="slider-content">
+      <h1>Welcome to Our Campaigns</h1>
+      <button class="start-btn" type="button">Start Campaign</button>
+    </div>
+
+    <button class="prev" type="button" aria-label="Previous">&#10094;</button>
+    <button class="next" type="button" aria-label="Next">&#10095;</button>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup" id="loginPopup">
+    <div class="popup-content">
+      <span class="close" id="closePopup">&times;</span>
+      <p>Please login first</p>
+      <a href="/pages/login.html" class="login-btn">Login</a>
+    </div>
+  </div>
+    <!-- about section  -->
+    <div class="container" id="about">
+      <h2>About</h2>
+      <div class="about">
+        <div class="about__content">
+          <h3>About</h3>
+
+          <p>
+            This campaign aims to raise awareness and support for our
+            initiative. We believe in making a positive impact by engaging
+            communities and creating sustainable solutions for the future.
+          </p>
+        </div>
+
+        <div class="about__image">
+          <img src="./image/imgaboutt.png" alt="Campaign Image" />
+        </div>
+      </div>
+    </div>
+
+    <!-- campaign -->
+    <div class="container">
+  <header class="header">
+    <h1>Campaigns</h1>
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="Search by title..." />
+      <select id="sortSelect">
+        <option value="default" disabled selected>Sort By</option>
+        <option value="goal">Goal</option>
+        <option value="deadline">Deadline</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="campaigns-container" id="campaignsContainer"></main>
+</div>
+
+<!-- Popup -->   
+<div class="popup"   id="loginPopup">
+  <div class="popup-content">
+    <span class="close" id="closePopup">&times;</span>
+    <p>Please login first</p>
+    <a href="/pages/login.html" class="login-btn">Login</a>
+  </div>
+</div>
+
+    <!-- Testimonials Section -->
+    <div class="container" id="testimonials">
+      <h2>What People Say</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <img src="./image/image1.jpg" alt="User 1" />
+          <h3>Sarah Johnson</h3>
+          <p>
+            This campaign helped raise awareness in our community. We’re so
+            thankful!
+          </p>
+        </div>
+
+        <div class="testimonial">
+          <img src="./image/img3.jpg" />
+          <h3>Mohamed Ali</h3>
+          <p>
+            I’m proud to be part of this initiative. It brings real change to
+            people’s lives.
+          </p>
+        </div>
+
+        <div class="testimonial">
+          <img src="./image/img2.webp" alt="User 3" />
+          <h3>Emily Davis</h3>
+          <p>
+            The campaign’s vision is inspiring. It motivates communities to take
+            action.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- footer -->
+    <div id="footer"></div>
+
+    <script src="./js/navbar.js" type="module"></script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/camphome.js" type="module"></script>
+    <script type="module" src="./js/footer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+     <!-- font awesome -->
+   
+    <link
+      rel="stylesheet"
+      href="./../fontawesome-free-7.0.0-web/css/all.min.css"
+    />
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  <!-- css -->
+    <link rel="stylesheet" href="../style/main.css" />
+  </head>
+  <body>
+    <div id="nav"></div>
+
+    <div class="container">
+      <main class="login">
+        <div class="login__container">
+          <h1 class="login__title">Login</h1>
+          <form id="login-form" class="login__form">
+            <div class="login__group">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="login__input" />
+              <div id="email-msg" class="validation-msg"></div>
+            </div>
+            <div class="login__group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                class="login__input"
+              />
+              <div id="password-msg" class="validation-msg"></div>
+            </div>
+            <button type="submit" class="btn btn--full">Login</button>
+
+            <p class="login__text">
+              Don't have an account?
+              <a href="/pages/regester.html" class="redirect">Register here</a>
+            </p>
+            <div id="login-msg" class="form-msg"></div>
+          </form>
+        </div>
+      </main>
+    </div>
+ <div id="footer"></div>
+
+    <script type="module" src="../js/footer.js"></script>
+    <script type="module" src="/js/login.js"></script>
+  </body>
+</html>

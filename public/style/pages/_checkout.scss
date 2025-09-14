@@ -1,0 +1,95 @@
+@use "../abstracts/variables" as *;
+@use "../components/btns" as *;
+
+.container {
+  margin: 50px auto;
+  width: 100%;
+  max-width: 90%;
+  padding: 0 1em;
+}
+
+.checkout-container {
+  background: $light-color;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px $overlay-color;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+
+  .checkout-title {
+    color: $primary-color;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    label {
+      text-align: left;
+      font-weight: bold;
+      color: $gr-color;
+    }
+
+    .input-error {
+      color: $text-error;
+      text-align: start;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid $light-gray;
+      border-radius: 8px;
+      background: $light-bg;
+      outline: none;
+      font-family: $main-font;
+      font-size: 14px;
+
+      &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 5px $secondary-color;
+      }
+
+      &.is-valid {
+        border-color: $text-success;
+        box-shadow: 0 0 5px rgba($text-success, 0.3);
+      }
+
+      &.is-invalid {
+        border-color: $text-error;
+        box-shadow: 0 0 5px rgba($text-error, 0.3);
+      }
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      .col {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .message-box {
+      font-size: 14px;
+      font-weight: bold;
+      height: 18px;
+      margin-top: 5px;
+
+      &.error {
+        color: $text-error;
+      }
+
+      &.success {
+        color: $text-success;
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <!-- font awesome -->
+
+    <link
+      rel="stylesheet"
+      href="./../fontawesome-free-7.0.0-web/css/all.min.css"
+    />
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="../style/main.css" />
+  </head>
+  <body>
+    <div id="nav"></div>
+    <div class="container">
+      <div class="register">
+        <h2>Register</h2>
+        <form class="register__form">
+          <div class="register__group">
+            <label for="name">User Name</label>
+            <input type="text" id="name" placeholder="Enter your User name" />
+            <p class="validation-msg" id="name-msg"></p>
+          </div>
+          <div class="register__group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" />
+            <p class="validation-msg" id="email-msg"></p>
+          </div>
+          <div class="register__group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+            />
+            <p class="validation-msg" id="password-msg"></p>
+          </div>
+          <div class="register__group">
+            <label for="confirmpassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmpassword"
+              placeholder="Confirm your password"
+            />
+            <p class="validation-msg" id="confirmpassword-msg"></p>
+          </div>
+          <button type="submit" class="btn btn--full">Regester</button>
+
+          <p id="message"></p>
+
+          <p class="redirect">
+            Already have an account? <a href="./login.html">Login</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <div id="footer"></div>
+
+    <script type="module" src="../js/footer.js"></script>
+    <script src="../js/regester.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+@use "../abstracts/variables" as *;
+@use "../components/btns" as *;
+
+.container {
+  margin: 50px auto;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 1em;
+}
+
+.campaign-section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+
+  .form-message {
+color: $text-success;
+    padding: 20px;
+  }
+
+  .campaign-form {
+    background: $light-color;
+    border: 1px solid $light-gray;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 2px 6px $overlay-color;
+    margin-bottom: 2rem;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 10px $overlay-color;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: $primary-color;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin-bottom: 0.4rem;
+        color: $dark-color;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      input[type="date"],
+      textarea {
+        padding: 0.6rem;
+        border: 1px solid $light-gray;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: $primary-color;
+          outline: none;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+
+      input[type="file"] {
+        font-size: 0.85rem;
+      }
+
+      .error-msg {
+        color: $text-error;
+        font-size: 0.85rem;
+        margin-top: 0.3rem;
+      }
+
+      .input-error {
+        border-color: $text-error !important;
+      }
+    }
+
+    .btn--full {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+}
