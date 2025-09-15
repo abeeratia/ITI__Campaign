@@ -8,7 +8,6 @@ export function protectRoute() {
     path.includes("admin") ||
     path.includes("campaignsMange") ||
     path.includes("pledgesManage") ||
-    path.includes("pledgesManage") ||
     path.includes("campaignDetails") ||
     path.includes("mycampaign") ||
     path.includes("addCampaign") ||

@@ -5,7 +5,7 @@
       "password": "$2a$10$mpyuSM4Wz/EszpkIZqFiwe.rutXlAEMVjCEWlyl5gXQn69SBti/9m",
       "name": "abeer1",
       "role": "user",
-      "isActive": false,
+      "isActive": true,
       "isBlock": false,
       "id": 36
     },
@@ -14,7 +14,7 @@
       "password": "$2a$10$2jOJIO.ucZL.JUoS1t2X7eNoR8pamg5ew3zFZ7Rg2gReI2w/e6hme",
       "name": "sara",
       "role": "user",
-      "isActive": false,
+      "isActive": true,
       "isBlock": false,
       "id": 37
     },
@@ -23,7 +23,7 @@
       "password": "$2a$10$.6z/7X/YyWRRCkXS5RlHi.c1d8RLAT4OJzu1AiRqMVQwGv5XZEm1y",
       "name": "esraa",
       "role": "user",
-      "isActive": false,
+      "isActive": true,
       "isBlock": false,
       "id": 38
     },
