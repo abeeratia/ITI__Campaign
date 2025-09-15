@@ -107,7 +107,7 @@ export let NavBar = () => {
           <div class="dropdown-menu">
             <a href="/pages/addCampaign.html">Add Campaigns</a>
             <a href="../pages/mycampaign.html">My Campaign</a>
-            <a href="../pages/pledges.html">My Pledges</a>
+            <a href="../pages/Mypledges.html">My Pledges</a>
           </div>
         </div>
         <button type="submit" id="logout" class="btn btn--full">Logout</button>

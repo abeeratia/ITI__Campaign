@@ -36,7 +36,7 @@ export function protectRoute() {
     path.includes("mycampaign") ||
     path.includes("checkout") ||
     path.includes("addCampaign") ||
-    path.includes("pledges")
+    path.includes("Mypledges")
   ) {
     if (role !== "user") {
       window.location.href = "/index.html";
