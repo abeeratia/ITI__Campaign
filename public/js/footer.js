@@ -38,7 +38,7 @@ export function CampaignFooter() {
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2025 Campaign. All Rights Reserved.</p>
+        <p>&copy; 2025 Campaign All Rights Reserved</p>
       </div>
     </div>
   `;

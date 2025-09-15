@@ -1,5 +1,5 @@
 import { NavBar } from "./navbar.js";
-import { validateEmail, validateName } from "./data.js";
+import { validateEmail } from "./data.js";
 import { CampaignFooter } from "./footer.js";
 CampaignFooter();
 
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => (location.href = "/pages/login.html"), 1000);
     } catch (err) {
       console.error(err);
-      generalMsg.textContent = "Network or server error";
+      generalMsg.textContent = " server error";
       generalMsg.classList.add("error");
     }
   });

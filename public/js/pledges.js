@@ -20,7 +20,7 @@ async function getPledges() {
     console.log("Pledges:", pledges);
 
     if (!pledges.length) {
-      container.innerHTML = `<p>No pledges found for this user.</p>`;
+      container.innerHTML = `<p>no pledges found for this user</p>`;
       return;
     }
     
@@ -44,7 +44,7 @@ async function getPledges() {
     });
   } catch (err) {
     console.error("Error fetching pledges:", err);
-    container.innerHTML = `<p style="color:red;">Error loading pledges.</p>`;
+    container.innerHTML = `<p style="color:red;">error loading pledges.</p>`;
   }
 }
 

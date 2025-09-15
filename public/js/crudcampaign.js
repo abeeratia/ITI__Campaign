@@ -11,18 +11,18 @@ export function getAllCampaigns(onlyApproved) {
       }
     })
     .catch((err) => {
-      console.log("Error getting campaigns:", err);
+      console.log("error getting campaigns", err);
       return [];
     });
 }
 export async function getCampaignById(id) {
   try {
     const res = await fetch(`http://localhost:3001/campaigns/${id}`);
-    if (!res.ok) throw new Error("Failed to fetch campaign");
+    if (!res.ok) throw new Error("error to fetch campaign");
 
     return await res.json();
   } catch (error) {
-    console.error("Get campaign by ID error:", error);
+    console.error("Get campaign by ID error", error);
     return null;
   }
 }
@@ -37,7 +37,7 @@ export async function addCampaign(newCampaign) {
       body: JSON.stringify(newCampaign),
     });
 
-    if (!res.ok) throw new Error("Failed to add campaign");
+    if (!res.ok) throw new Error("error to add campaign");
 
     return await res.json();
   } catch (error) {
@@ -56,7 +56,7 @@ export async function updateCampaign(id, updatedData) {
       body: JSON.stringify(updatedData),
     });
 
-    if (!res.ok) throw new Error("Failed to update campaign");
+    if (!res.ok) throw new Error("error to update campaign");
 
     return await res.json();
   } catch (error) {
@@ -71,7 +71,7 @@ export async function deleteCampaign(id) {
       method: "DELETE",
     });
 
-    if (!res.ok) throw new Error("Failed to delete campaign");
+    if (!res.ok) throw new Error("error to delete campaign");
 
     return true;
   } catch (error) {

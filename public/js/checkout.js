@@ -37,7 +37,7 @@ payMent.addEventListener("click", async (e) => {
   let valid = true;
 
   if (nameInput.value === "") {
-    nameError.textContent = "Name is required";
+    nameError.textContent = "name is required";
     nameInput.classList.add("is-invalid");
     valid = false;
   } else {
@@ -45,7 +45,7 @@ payMent.addEventListener("click", async (e) => {
   }
 
   if (cardNumberInput.value === "") {
-    cardError.textContent = "Card number is required";
+    cardError.textContent = "card number is required";
     cardNumberInput.classList.add("is-invalid");
     valid = false;
   } else {
@@ -53,7 +53,7 @@ payMent.addEventListener("click", async (e) => {
   }
 
   if (expiryInput.value === "") {
-    expiryError.textContent = "Expiry date is required";
+    expiryError.textContent = "expiry date is required";
     expiryInput.classList.add("is-invalid");
     valid = false;
   } else {
@@ -61,7 +61,7 @@ payMent.addEventListener("click", async (e) => {
   }
 
   if (cvvInput.value === "") {
-    cvvError.textContent = "CVV is required";
+    cvvError.textContent = "cvv is required";
     cvvInput.classList.add("is-invalid");
     valid = false;
   } else {
@@ -69,7 +69,7 @@ payMent.addEventListener("click", async (e) => {
   }
 
   if (!valid) {
-    generalMsg.textContent = "Please fix the errors above.";
+    generalMsg.textContent = "please fix the errors above.";
     return;
   }
 
@@ -81,12 +81,12 @@ payMent.addEventListener("click", async (e) => {
     generalMsg.textContent = "Reward not found!";
     return;
   }
-  const confirmPay = confirm(
-    `Are you sure you want to pay $${reward.amount} for this campaign?`
+  const alertPay = alert(
+    `are you sure you want to pay $${reward.amount} for this campaign?`
   );
 
-  if (!confirmPay) {
-  generalMsg.textContent = "Payment cancelled by user.";
+  if (!alertPay) {
+  generalMsg.textContent = "payment cancelled by user.";
     return;
   }
 
@@ -115,13 +115,13 @@ payMent.addEventListener("click", async (e) => {
 
 
     if (response.ok) {
-      generalMsg.textContent = "Payment processed successfully!";
+      generalMsg.textContent = "payment successfully!";
       window.location.href = "./../index.html";
     } else {
-      generalMsg.textContent = "Error processing payment!";
+      generalMsg.textContent = "error payment!";
     }
   } catch (error) {
     console.error("Error:", error);
-    generalMsg.textContent = "Something went wrong!";
+    generalMsg.textContent = "something went wrong!";
   }
 });

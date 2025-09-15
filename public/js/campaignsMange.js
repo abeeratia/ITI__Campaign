@@ -56,14 +56,14 @@ window.addEventListener("DOMContentLoaded", async () => {
       .addEventListener("click", async () => {
         const campaignId = campaign.id;
         const confirmed = confirm(
-          "Are you sure you want to delete this campaign?"
+          "are you sure you want to delete this campaign?"
         );
         if (confirmed) {
           const res = await deleteCampaign(campaignId);
           if (res) {
             row.remove(); 
           } else {
-            alert("Failed to delete campaign!");
+            alert("error for delete campaign");
           }
         }
       });

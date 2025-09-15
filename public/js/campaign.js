@@ -113,7 +113,7 @@ campaignForm.addEventListener("submit", async (e) => {
     if (result) {
       campaignForm.reset();
       showFormMessage("Campaign created successfully!", "success");
-      console.log("New campaign:", result);
+      console.log("new campaign:", result);
     } else {
       showFormMessage("Could not create campaign.", "error");
     }

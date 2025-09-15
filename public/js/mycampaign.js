@@ -82,10 +82,10 @@ function displayCampaigns(campaigns) {
       if (confirm("Are you sure you want to delete this campaign?")) {
         const success = await deleteCampaignEle(id);
         if (success) {
-          alert("Campaign deleted successfully!");
+          alert("campaign deleted successfully!");
           fetchUserCampaigns();
         } else {
-          alert("Error deleting campaign");
+          alert("error deleting campaign");
         }
       }
     });
@@ -151,7 +151,7 @@ async function updateCampaign(id, deadline, rewards) {
     alert("Campaign updated successfully!");
   } catch (err) {
     console.error(err);
-    alert("Error updating campaign");
+    alert("error updating campaign");
   }
 }
 
@@ -163,7 +163,7 @@ async function updateCampaign(id, deadline, rewards) {
 
     return true;
   } catch (error) {
-    console.error("Delete campaign error:", error);
+    console.error("error delete campaign :", error);
     return false;
   }
 }

@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1000);
     } catch (err) {
       console.error(err);
-      loginMsg.textContent = "Network or server error";
+      loginMsg.textContent = " server error";
       loginMsg.classList.add("error");
     }
   });
