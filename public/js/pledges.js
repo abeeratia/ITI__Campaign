@@ -25,6 +25,7 @@ async function getPledges() {
     }
     
     pledges.forEach(async(p) => {
+console.log(p);
 
       const acmpData =await getCampaignById(p.campaignId)
       

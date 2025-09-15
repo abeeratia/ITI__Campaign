@@ -7,10 +7,11 @@ CampaignFooter();
 
 const user = Number(localStorage.getItem("userId"));
 const container = document.getElementById("campaign-container");
+console.log(user);
 
 async function fetchUserCampaigns() {
   try {
-    const response = await fetch(`http://localhost:3001/campaigns?Id=${user}`);
+    const response = await fetch(`http://localhost:3001/campaigns?creatorId=${user}`);
     if (!response.ok) throw new Error("No campaigns found");
 
     const campaigns = await response.json();

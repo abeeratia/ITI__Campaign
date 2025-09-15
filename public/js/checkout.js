@@ -97,7 +97,7 @@ payMent.addEventListener("click", async (e) => {
     amount: reward.amount,
     date: new Date().toISOString(),
   };
-
+ 
   try {
     const response = await fetch(`http://localhost:3001/pledges`, {
       method: "POST",
