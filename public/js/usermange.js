@@ -18,7 +18,7 @@ async function renderUsers() {
       <td>${user.id}</td>
       <td>${user.name}</td>
       <td>${user.email}</td>
-      <td class="role">${user.role}</td>
+      <td class="role ${user.role}">${user.role}</td>
       <td>${user.isActive === false ? "❌" : "✅"}</td>
       <td>${user.isBlock === false ? "❌" : "✅"}</td>
 

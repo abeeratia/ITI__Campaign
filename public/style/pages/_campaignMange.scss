@@ -18,10 +18,10 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow-x: auto;
-  width: 40%;
+  width: 90%;
 
   table {
-    width: 50%;
+    width: 100%;
     border-collapse: collapse;
     min-width: 750px;
 
@@ -92,15 +92,6 @@
 
           &:nth-child(6) {
             text-align: center;
-
-            .status {
-              display: inline-block;
-              padding: 4px 10px;
-              font-size: 12px;
-              border-radius: 20px;
-              font-weight: 600;
-              text-transform: capitalize;
-            }
           }
         }
 
@@ -122,6 +113,7 @@
           .btn-approve {
             background-color: $primary-color;
             padding: 1em;
+            color: #fff;
           }
 
           .btn-delete {
@@ -160,5 +152,70 @@
         }
       }
     }
+  }
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  text-transform: capitalize;
+
+  &.approved {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  &.not-approved {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+  }
+
+  input:checked + .slider {
+    background-color: $primary-color;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
   }
 }

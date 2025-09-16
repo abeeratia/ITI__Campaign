@@ -1,7 +1,7 @@
 import { NavBar } from "./navbar.js";
-import { addCampaign } from "./crudcampaign.js"; 
-import { CampaignFooter } from "./footer.js"; 
-CampaignFooter()
+import { addCampaign } from "./crudcampaign.js";
+import { CampaignFooter } from "./footer.js";
+CampaignFooter();
 
 NavBar();
 
@@ -13,7 +13,6 @@ const imageInput = document.querySelector("#image");
 const campaignForm = document.querySelector("#campaignForm");
 const formMessage = document.querySelector("#form-message");
 
-
 function toBase64(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -23,12 +22,10 @@ function toBase64(file) {
   });
 }
 
-
 function showFormMessage(message, type) {
   formMessage.textContent = message;
   formMessage.className = `form-message ${type}`;
 }
-
 
 function setInputError(input, message) {
   const errorDiv = input.parentElement.querySelector(".error-msg");
@@ -41,10 +38,8 @@ function setInputError(input, message) {
   }
 }
 
-
 campaignForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-
 
   setInputError(titleInput, "");
   setInputError(descriptionInput, "");
@@ -54,7 +49,6 @@ campaignForm.addEventListener("submit", async (e) => {
   formMessage.className = "form-message";
 
   let hasError = false;
-
 
   if (!titleInput.value.trim()) {
     setInputError(titleInput, "Title is required");
@@ -79,13 +73,12 @@ campaignForm.addEventListener("submit", async (e) => {
   }
 
   try {
-    const userId = localStorage.getItem("userId") || "1"; 
+    const userId = localStorage.getItem("userId") || "1";
 
     let base64Image = "";
     if (imageInput.files.length > 0) {
       base64Image = await toBase64(imageInput.files[0]);
     }
-
 
     const newCampaign = {
       title: titleInput.value.trim(),
@@ -106,7 +99,6 @@ campaignForm.addEventListener("submit", async (e) => {
       createdAt: new Date().toISOString(),
     };
 
-
     const result = await addCampaign(newCampaign);
     console.log(result);
 
@@ -125,7 +117,6 @@ campaignForm.addEventListener("submit", async (e) => {
     );
   }
 });
-
 
 [titleInput, descriptionInput, goalInput, deadlineInput].forEach((input) => {
   input.addEventListener("input", () => {

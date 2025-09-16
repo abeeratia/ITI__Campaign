@@ -12,6 +12,11 @@ function sidebarLayout() {
           <a href="/pages/admin.html"><li data-tab="users">Users</li></a>
           <a href="/pages/campaignsMange.html"><li data-tab="campaigns">Campaigns</li></a>
           <a href="/pages/pledgesManage.html"><li data-tab="pledges">Pledges</li></a>
+          ${
+            role === "admin"
+              ? `<a href="/index.html"><li data-tab="home">Home</li></a>`
+              : ""
+          }
         </ul>
       </div>
       <div class="sidebar-footer" id="sidebarFooter"></div>
@@ -29,13 +34,14 @@ export function AdminSidebar() {
   const sidebar = document.querySelector("#admin");
   if (!sidebar) return;
 
-  protectRoute()
+  protectRoute();
 
   sidebar.innerHTML = sidebarLayout();
 
   const sidebarFooter = document.querySelector("#sidebarFooter");
   sidebarFooter.innerHTML = `<button class="btn btn--full" id="logout">Logout</button>`;
   document.querySelector("#logout").addEventListener("click", logOut);
+
   const currentPath = window.location.pathname;
   document.querySelectorAll("#sidebarMenu a").forEach((link) => {
     if (link.getAttribute("href") === currentPath) {

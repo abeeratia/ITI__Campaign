@@ -24,7 +24,7 @@ h2 {
 }
 
 .campaign-card {
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background: $light-color;
   padding: 20px;
   border-radius: 10px;
@@ -44,39 +44,31 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 }
 
-@media (min-width: 1200px) {
-  .campaign-card {
-    width: 30%;
+.btn {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-update {
+  background: $primary-color;
+  color: $light-color;
+  &:hover {
+    background: $secondary-color;
   }
 }
 
-  .btn {
-    display: block;      
-    width: 100%;       
-    margin: 8px 0;      
-    padding: 10px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  .btn-update {
-    background: $primary-color;
-    color: $light-color;
-    &:hover {
-      background: $secondary-color;
-    }
-  }
-
-  .btn-delete {
-    background:$text-error ;
-    color: $light-color;
+.btn-delete {
+  background: $text-error;
+  color: $light-color;
   &:hover {
-      background: $text-error;
-    }
+    background: $text-error;
   }
-
-
+}
 
 .campaign-image {
   width: 100%;
@@ -138,23 +130,24 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .popupUpdate {
-  position: fixed ;
-  inset: 0 ;
-  background: $overlay-color ;
-  display: flex ;
-  align-items: center ;
-  justify-content: center ;
+  position: fixed;
+  inset: 0;
+  background: $overlay-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .popupUpdate-content {
     background: $light-color;
     padding: 20px;
     border-radius: 10px;
-    width: 350px;
+    width: 50%;
 
     h3 {
+      color: $primary-color;
+      font-size: 25px;
       margin-bottom: 15px;
       text-align: center;
-      color: $dark-color;
     }
 
     label,
@@ -162,13 +155,22 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       display: block;
       margin-bottom: 10px;
 
-      input {
+      input,
+      textarea {
         width: 100%;
         margin-top: 5px;
         padding: 5px;
         border: 1px solid $light-gray;
         border-radius: 5px;
       }
+    }
+
+    #imagePreview {
+      display: block;
+      margin-top: 10px;
+      border-radius: 6px;
+      max-width: 100%;
+      height: auto;
     }
 
     .popupUpdate-buttons {

@@ -1,8 +1,7 @@
 import { NavBar } from "./navbar.js";
 import { validateEmail } from "./data.js";
-import { CampaignFooter } from "./footer.js"; 
-CampaignFooter()
-
+import { CampaignFooter } from "./footer.js";
+CampaignFooter();
 NavBar();
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,6 +11,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const emailMsg = document.querySelector("#email-msg");
   const passwordMsg = document.querySelector("#password-msg");
   const loginMsg = document.querySelector("#login-msg");
+
+  async function checkIfBlocked(email) {
+    try {
+      const response = await fetch(
+        `http://localhost:3001/users?email=${email}`
+      );
+      const users = await response.json();
+      console.log(users);
+      
+      if (users.length > 0 && users[0].isBlock === true) {
+        alert(
+          `Your account has been blocked. Reason: ${
+            users[0].blockReason || "No reason provided"
+          }`
+        );
+        localStorage.clear();
+        window.location.href = "../pages/login.html";
+        return true;  
+      }
+      return false; 
+    } catch (err) {
+      console.error(err);
+      return false;
+    }
+  }
 
   function validateEmailInput() {
     if (!emailInput.value.trim()) {
@@ -78,6 +102,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    const isBlocked = await checkIfBlocked(emailInput.value.trim());
+    console.log(isBlocked);
+    
+    if (isBlocked) return;   
+
     loginMsg.textContent = "";
     loginMsg.classList.remove("error");
 
@@ -102,12 +131,23 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      if (result.user.isBlock === true) {
+        alert(
+          `Your account has been blocked. Reason: ${
+            result.user.blockReason || "No reason provided"
+          }`
+        );
+        localStorage.clear();
+        window.location.href = "../pages/login.html";
+        return;
+      }
+
       localStorage.setItem("userId", result.user.id);
       localStorage.setItem("userName", result.user.name);
       localStorage.setItem("userIsActive", result.user.isActive);
       localStorage.setItem("role", result.user.role);
-
       localStorage.setItem("token", result.accessToken);
+
       loginMsg.textContent = "Login successful!";
       loginMsg.classList.add("success");
 
@@ -120,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1000);
     } catch (err) {
       console.error(err);
-      loginMsg.textContent = " server error";
+      loginMsg.textContent = "Server error";
       loginMsg.classList.add("error");
     }
   });

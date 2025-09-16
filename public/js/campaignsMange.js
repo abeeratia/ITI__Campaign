@@ -22,12 +22,17 @@ window.addEventListener("DOMContentLoaded", async () => {
             <td>${campaign.description}</td>
             <td>${campaign.goal}</td>
             <td>${campaign.deadline}</td>
-            <td>${campaign.isApproved ? "Approved" : "Not Approved"}</td>
-
+            <td>
+              <span class="status ${
+                campaign.isApproved ? "approved" : "not-approved"
+              }">
+                ${campaign.isApproved ? "Approved" : "Not Approved"}
+              </span>
+            </td>
             <td>
                 <button id="approveBtn${campaign.id}" data-id="${campaign.id}" 
                   class="btn-approve">
-                  ${campaign.isApproved ? "Approved" : "Approve"}
+                  ${campaign.isApproved ? "Unapprove" : "Approve"}
                 </button>
                 <button id="deleteBtn${campaign.id}" data-id="${campaign.id}" 
                   class="btn-delete">
@@ -41,10 +46,10 @@ window.addEventListener("DOMContentLoaded", async () => {
       .getElementById(`approveBtn${campaign.id}`)
       .addEventListener("click", async () => {
         const campaignId = campaign.id;
-        const approvedStatus = campaign.isApproved ? false : true;
+        const newStatus = !campaign.isApproved;
 
         const res = await updateCampaign(campaignId, {
-          isApproved: approvedStatus,
+          isApproved: newStatus,
         });
         if (res) {
           window.location.reload();
@@ -61,7 +66,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         if (confirmed) {
           const res = await deleteCampaign(campaignId);
           if (res) {
-            row.remove(); 
+            row.remove();
           } else {
             alert("error for delete campaign");
           }

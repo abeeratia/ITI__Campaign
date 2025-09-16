@@ -42,6 +42,7 @@ function logOut() {
 function logIn() {
   window.location.href = "/pages/login.html";
 }
+
 function setActiveLink() {
   const links = document.querySelectorAll(".nav-link");
 
@@ -78,30 +79,30 @@ function setActiveLink() {
 }
 
 document.addEventListener("DOMContentLoaded", setActiveLink);
-
 window.addEventListener("hashchange", setActiveLink);
-
-document.addEventListener("DOMContentLoaded", () => {
-  setActiveLink();
-});
-
-window.addEventListener("hashchange", setActiveLink);
-
 
 export let NavBar = () => {
   const navContent = document.querySelector("#nav");
   if (!navContent) return;
-
-  protectRoute();
+  const path = window.location.pathname;
+  if (!path.endsWith("index.html") && path !== "/") {
+    protectRoute();
+  }
 
   navContent.innerHTML = navBar();
   const navSign = document.querySelector(".nav__sign");
 
   const userName = localStorage.getItem("userName");
+  const role = localStorage.getItem("role");
 
   if (token) {
     navSign.innerHTML = `
       <div class="log">
+       ${
+         role == "admin"
+           ? `<a href="../pages/admin.html"><button type="submit" class="btn btn--full">Dashboard</button></a>`
+           : ""
+       }
         <div class="user-dropdown">
           <p class="user-name">Hi ${userName}</p>
           <div class="dropdown-menu">
@@ -131,11 +132,9 @@ export let NavBar = () => {
     document.querySelector("#logout").addEventListener("click", logOut);
   } else {
     navSign.innerHTML = ` 
-      
-      <a href="/pages/regester.html"> <button   class="log btn btn--full">Register</button></a>
-          <a href="/pages/login.html"> <button  id="login" class="log btn btn--full">login</button></a>
-
-      `;
+      <a href="/pages/regester.html"> <button class="log btn btn--full">Register</button></a>
+      <a href="/pages/login.html"> <button id="login" class="log btn btn--full">Login</button></a>
+    `;
     document.querySelector("#login").addEventListener("click", logIn);
   }
 
@@ -146,4 +145,3 @@ export let NavBar = () => {
 document.addEventListener("DOMContentLoaded", () => {
   NavBar();
 });
-window.addEventListener("hashchange", setActiveLink);

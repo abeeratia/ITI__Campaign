@@ -1,6 +1,6 @@
 import { NavBar } from "./navbar.js";
 import { getAllCampaigns } from "./crudcampaign.js";
-import { CampaignFooter } from "./footer.js"; 
+import { CampaignFooter } from "./footer.js";
 
 CampaignFooter();
 NavBar();
