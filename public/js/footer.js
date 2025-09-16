@@ -10,9 +10,9 @@ export function CampaignFooter() {
           <h3>Quick Links</h3>
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">About Campaign</a></li>
-            <li><a href="#">All Campaigns</a></li>
-            <li><a href="#">Contact Us</a></li>
+        <li><a href="/pages/groupcampaign.html" class="nav-link">Campaigns</a></li>
+        <li><a href="/index.html#about" class="nav-link">About</a></li>
+        <li><a href="/index.html#testimonials" class="nav-link">Testimonials</a></li>
           </ul>
         </div>
 
