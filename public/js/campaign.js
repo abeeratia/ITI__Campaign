@@ -12,6 +12,7 @@ const deadlineInput = document.querySelector("#deadline");
 const imageInput = document.querySelector("#image");
 const campaignForm = document.querySelector("#campaignForm");
 const formMessage = document.querySelector("#form-message");
+const imagePreview = document.querySelector("#image-preview");
 
 function toBase64(file) {
   return new Promise((resolve, reject) => {
@@ -21,6 +22,7 @@ function toBase64(file) {
     reader.onerror = (error) => reject(error);
   });
 }
+
 
 function showFormMessage(message, type) {
   formMessage.textContent = message;
@@ -37,6 +39,18 @@ function setInputError(input, message) {
     if (errorDiv) errorDiv.textContent = "";
   }
 }
+
+imageInput.addEventListener("change", async () => {
+  if (imageInput.files && imageInput.files[0]) {
+    const file = imageInput.files[0];
+    const base64Image = await toBase64(file);
+    imagePreview.src = base64Image;
+    imagePreview.classList.add("show");
+  } else {
+    imagePreview.src = "";
+    imagePreview.classList.remove("show");
+  }
+});
 
 campaignForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -104,6 +118,8 @@ campaignForm.addEventListener("submit", async (e) => {
 
     if (result) {
       campaignForm.reset();
+      imagePreview.src = "";
+      imagePreview.classList.remove("show");
       showFormMessage("Campaign created successfully!", "success");
       console.log("new campaign:", result);
     } else {

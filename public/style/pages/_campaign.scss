@@ -14,8 +14,16 @@
   padding: 1rem;
 
   .form-message {
-color: $text-success;
     padding: 20px;
+    font-weight: 600;
+
+    &.success {
+      color: $text-success;
+    }
+
+    &.error {
+      color: $text-error;
+    }
   }
 
   .campaign-form {

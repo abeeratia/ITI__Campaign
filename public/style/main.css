@@ -799,8 +799,14 @@ h2 {
   padding: 1rem;
 }
 .campaign-section .form-message {
-  color: green;
   padding: 20px;
+  font-weight: 600;
+}
+.campaign-section .form-message.success {
+  color: green;
+}
+.campaign-section .form-message.error {
+  color: red;
 }
 .campaign-section .campaign-form {
   background: white;
